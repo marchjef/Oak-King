@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: Marchjef/oak-king
+  branch: main
+media_folder: public/images/releases
+public_folder: /images/releases
+site_url: https://oak-king.com
+collections:
+  - name: releases
+    label: Releases
+    label_singular: Release
+    folder: content/releases
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} ({{proof}} proof): {{status}}"
+    fields:
+      - { name: name, label: "Name (example: Straight Bourbon Whiskey)", widget: string }
+      - { name: status, label: "Status (Sold out moves it to the list only)", widget: select, options: ["Available", "Sold out"], default: "Available" }
+      - { name: color, label: "Page color", widget: select, options: ["blue", "green"], default: "blue" }
+      - { name: proof, label: "Proof", widget: number, value_type: float, step: 0.01 }
+      - { name: abv, label: "Alc/Vol %", widget: number, value_type: float, step: 0.01 }
+      - { name: age, label: "Age", widget: string, default: "8 years" }
+      - { name: selectedBy, label: "Selected by", widget: string, default: "ROC Elite" }
+      - { name: distilledIn, label: "Distilled in", widget: string, default: "Indiana" }
+      - { name: bottledIn, label: "Bottled in", widget: string, default: "Tennessee" }
+      - { name: mashBill, label: "Mash bill", widget: string }
+      - { name: blurb, label: "One-line description", widget: string }
+      - { name: photo, label: "Bottle photo", widget: image }
+      - { name: photoAlt, label: "Photo description", widget: string }
+      - { name: buyUrl, label: "Link to buy", widget: string, required: false }
+      - { name: sortOrder, label: "Order (higher shows first)", widget: number, value_type: int, default: 1 }

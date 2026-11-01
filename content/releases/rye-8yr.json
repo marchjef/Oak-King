@@ -1,0 +1,17 @@
+{
+  "name": "Straight Rye Whiskey",
+  "color": "green",
+  "status": "Available",
+  "proof": 110.02,
+  "abv": 55.01,
+  "age": "8 years",
+  "selectedBy": "ROC Elite",
+  "distilledIn": "Indiana",
+  "bottledIn": "Tennessee",
+  "mashBill": "95% rye, 5% malted barley",
+  "blurb": "A single barrel of nearly all rye, held to the same standard: it stands out right away, and we'd pour it every day.",
+  "photo": "/images/releases/rye.webp",
+  "photoAlt": "Oak King Straight Rye Whiskey bottle with a green label, in front of oak barrels",
+  "buyUrl": "https://buyspiritsdirect.myshopify.com/products/oak-king-7yr-single-barrel-rye-whiskey",
+  "sortOrder": 1
+}

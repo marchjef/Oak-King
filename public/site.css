@@ -1,0 +1,122 @@
+/* Layout concept: the site is built like the bottle. Label-colored bands, and fact grids ruled like the label's bottom panel. */
+:root {
+  --sky: #8cc6e0;
+  --sky-pale: #e4f3fa;
+  --moss: #9dbd5c;
+  --moss-pale: #eef5de;
+  --gold: #a97f1e;
+  --ink: #15262d;
+  --muted: #47585f;
+  --paper: #ffffff;
+  --rule: #15262d;
+  --display: "Gloock", Georgia, "Times New Roman", serif;
+  --body: "Figtree", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1.0625rem/1.6 var(--body); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.04; margin: 0; text-wrap: balance; }
+.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 0; }
+.btn { display: inline-block; background: var(--ink); color: #fff; border: 2px solid var(--ink); padding: .8em 1.4em; font: 600 1rem/1.2 var(--body); text-decoration: none; cursor: pointer; transition: background .15s, color .15s; }
+.btn:hover { background: transparent; color: var(--ink); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn.ghost:hover { background: var(--ink); color: #fff; }
+
+/* Header */
+.top { background: var(--paper); border-bottom: 2px solid var(--ink); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
+.mark { display: inline-flex; align-items: flex-end; gap: 8px; font: 400 1.55rem/1 var(--display); text-decoration: none; }
+.mark svg { width: 26px; height: 22px; color: var(--gold); }
+.top nav { display: flex; align-items: center; gap: 6px 22px; flex-wrap: wrap; font-weight: 600; font-size: .95rem; }
+.top nav a { text-decoration: none; }
+.top nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
+.top nav .btn { padding: .55em 1em; font-size: .95rem; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); background: var(--sky); border-bottom: 2px solid var(--ink); }
+.hero-copy { display: flex; flex-direction: column; justify-content: center; gap: 24px; padding-block: clamp(40px, 7vw, 96px); padding-left: max(20px, calc((100vw - 1200px) / 2 + 20px)); padding-right: clamp(20px, 4vw, 56px); }
+.hero h1 { font-size: clamp(3rem, 7.2vw, 6.4rem); }
+.hero p.lead { font-size: clamp(1.1rem, 1.7vw, 1.3rem); line-height: 1.45; max-width: 30em; margin: 0; }
+.hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-bottles { display: grid; grid-template-columns: 1fr 1fr; border-left: 2px solid var(--ink); min-height: 100%; }
+.hero-bottles img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
+.hero-bottles img + img { border-left: 2px solid var(--ink); }
+
+/* Bottles */
+.bottle { border-bottom: 2px solid var(--ink); }
+.bottle.bourbon { background: var(--sky-pale); }
+.bottle.rye { background: var(--moss-pale); }
+.bottle .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: center; padding-block: clamp(40px, 6vw, 80px); }
+.bottle.flip .photo { order: 2; }
+.bottle .photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 70%; border: 2px solid var(--ink); }
+.bottle .info { display: grid; gap: 20px; min-width: 0; }
+.bottle h2 { font-size: clamp(2.3rem, 5vw, 4rem); }
+.bottle .blurb { margin: 0; max-width: 34em; }
+.facts { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: var(--paper); border: 2px solid var(--rule); }
+.facts div { padding: 10px 14px; border-bottom: 1px solid var(--rule); min-width: 0; }
+.facts div:nth-child(odd) { border-right: 1px solid var(--rule); }
+.facts div.wide { grid-column: 1 / -1; border-right: 0; border-bottom: 0; }
+.facts dt { font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font-size: 1.1rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.buy-row { display: flex; align-items: center; gap: 10px 16px; flex-wrap: wrap; }
+.buy-row small { color: var(--muted); font-size: .9rem; }
+
+/* Story */
+.story .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 72px); padding-block: clamp(48px, 7vw, 96px); }
+.story h2 { font-size: clamp(2.3rem, 5vw, 4rem); }
+.story .text { max-width: 36em; display: grid; gap: 1em; font-size: 1.15rem; }
+.story .text p { margin: 0; }
+.story .sign { font: 400 1.5rem/1.2 var(--display); }
+
+/* Releases */
+.releases { background: var(--sky-pale); border-block: 2px solid var(--ink); }
+.releases .wrap { display: grid; gap: 22px; padding-block: clamp(40px, 6vw, 72px); }
+.releases h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.releases p { margin: 0; max-width: 40em; }
+.table-box { overflow-x: auto; background: var(--paper); border: 2px solid var(--ink); }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+th { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+td:first-child { font-weight: 600; }
+
+/* Contact */
+.contact .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 5vw, 72px); padding-block: clamp(48px, 7vw, 96px); }
+.contact h2 { font-size: clamp(2.3rem, 5vw, 4rem); margin-bottom: 18px; }
+.contact p { margin: 0 0 12px; max-width: 28em; }
+form { display: grid; gap: 16px; min-width: 0; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label { display: grid; gap: 5px; font-weight: 600; font-size: .95rem; }
+input, select, textarea { width: 100%; font: 400 1rem/1.4 var(--body); color: var(--ink); background: var(--paper); border: 2px solid var(--ink); border-radius: 0; padding: .7em .8em; }
+form .btn { justify-self: start; }
+.status { margin: 0; font-weight: 600; }
+.hp { position: absolute; left: -9999px; }
+
+/* Footer */
+footer { background: var(--ink); color: #fff; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px 32px; flex-wrap: wrap; padding-block: 28px; font-size: .92rem; }
+footer p { margin: 0; max-width: 46em; }
+
+/* Age check */
+.gate { position: fixed; inset: 0; z-index: 50; background: var(--sky); display: grid; place-items: center; padding: 20px; overflow: auto; }
+.gate-card { display: grid; justify-items: center; gap: 18px; text-align: center; max-width: 30rem; }
+.gate svg { width: 56px; height: 46px; color: var(--ink); }
+.gate h2 { font-size: clamp(2.4rem, 8vw, 3.6rem); }
+.gate p { margin: 0; }
+.gate .actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-copy { padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .hero-bottles { border-left: 0; border-top: 2px solid var(--ink); }
+  .hero-bottles img { aspect-ratio: 3 / 4; }
+  .bottle .wrap, .story .wrap, .contact .wrap { grid-template-columns: minmax(0, 1fr); }
+  .bottle.flip .photo { order: 0; }
+  .two { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }

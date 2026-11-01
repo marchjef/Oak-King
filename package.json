@@ -1,0 +1,1 @@
+{ "name": "oak-king", "private": true, "scripts": { "build": "node build.js" } }

@@ -1,0 +1,17 @@
+{
+  "name": "Straight Bourbon Whiskey",
+  "color": "blue",
+  "status": "Available",
+  "proof": 119.58,
+  "abv": 59.79,
+  "age": "8 years",
+  "selectedBy": "ROC Elite",
+  "distilledIn": "Indiana",
+  "bottledIn": "Tennessee",
+  "mashBill": "75% corn, 21% rye, 4% malted barley",
+  "blurb": "A single barrel that stood out right away, and one we'd pour every day.",
+  "photo": "/images/releases/bourbon.webp",
+  "photoAlt": "Oak King Straight Bourbon Whiskey bottle with a blue label, in front of oak barrels",
+  "buyUrl": "https://buyspiritsdirect.myshopify.com/products/oak-king-7yr-single-barrel-bourbon",
+  "sortOrder": 2
+}

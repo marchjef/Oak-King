@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oak King Whiskey</title>
+<meta name="description" content="Oak King is 8-year single barrel bourbon and rye. Premium whiskey. Shared experiences.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="crown" viewBox="0 0 40 33">
+    <path d="M4 29 2 8l10 8 8-14 8 14 10-8-2 21c-10 2.500-22 2.500-32 0Z" fill="none" stroke="currentColor" stroke-width="2.600" stroke-linejoin="round"/>
+  </symbol>
+</svg>
+
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-card">
+    <svg aria-hidden="true"><use href="#crown"/></svg>
+    <h2 id="gate-title">Are you 21 or older?</h2>
+    <p id="gate-msg">You must be of legal drinking age to enter this site.</p>
+    <div class="actions" id="gate-actions">
+      <button class="btn" id="gate-yes" type="button">Yes, I'm 21 or older</button>
+      <button class="btn ghost" id="gate-no" type="button">No</button>
+    </div>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top" id="top"><svg aria-hidden="true"><use href="#crown"/></svg>Oak King</a>
+    <nav aria-label="Main">
+      <a href="#bottles">Bottles</a>
+      <a href="#story">Story</a>
+      <a href="#releases">Releases</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Premium whiskey. Shared experiences.</h1>
+      <p class="lead">Eight-year-old single barrel bourbon and rye, at a price that lets you actually open the bottle.</p>
+      <div class="actions">
+        <a class="btn" href="#bottles">Find your bottle</a>
+        <a class="btn ghost" href="#story">Our story</a>
+      </div>
+    </div>
+    <div class="hero-bottles">
+{{HERO}}
+    </div>
+  </section>
+
+  <div id="bottles">
+{{BOTTLES}}
+  </div>
+
+  <section class="story" id="story">
+    <div class="wrap">
+      <h2>Great whiskey doesn't need a dress code.</h2>
+      <div class="text">
+        <p>I've spent years tasting and selecting barrels around the world. What started as a love of barrel picks turned into a passion, and eventually into Oak King.</p>
+        <p>We don't distill. We go find great barrels. When one stands out right away, and it's something we'd pour every day, it earns the crown.</p>
+        <p>I created Oak King to bring exceptional whiskey to more people at a quality price point. You don't need a whiskey degree to enjoy it. Golf has been a big part of my life, and I know there's no better place for a good pour than the 19th hole. But anywhere you're sharing it with good people works too.</p>
+        <p class="sign">Jeff, Oak King</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="releases" id="releases">
+    <div class="wrap">
+      <h2>Every Oak King release</h2>
+      <p>Each barrel is its own release. When one sells out, it stays on this list.</p>
+      <div class="table-box">
+        <table>
+          <thead><tr><th scope="col">Release</th><th scope="col">Proof</th><th scope="col">Age</th><th scope="col">Status</th></tr></thead>
+          <tbody>
+{{ROWS}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Get in touch</h2>
+        <p>Questions, events, or carrying Oak King at your store or bar. To buy a bottle, use the buy links above.</p>
+        <p>Or email <strong>Jeff@oak-king.com</strong></p>
+      </div>
+      <form name="contact" id="contact-form" method="POST" data-netlify="true" netlify-honeypot="company-url">
+        <input type="hidden" name="form-name" value="contact">
+        <label class="hp" aria-hidden="true">Leave this empty <input name="company-url" id="company-url" tabindex="-1" autocomplete="off"></label>
+        <div class="two">
+          <label for="name">Name <input id="name" name="name" autocomplete="name" required></label>
+          <label for="email">Email <input id="email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="reason">What's this about?
+          <select id="reason" name="reason">
+            <option>General question</option>
+            <option>Event</option>
+            <option>Store or bar</option>
+          </select>
+        </label>
+        <label for="message">Message <textarea id="message" name="message" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+        <p class="status" id="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Please drink responsibly. Oak King is for adults 21 and older. Purchases are handled by the retailer, and shipping depends on your state.</p>
+    <p>© <span id="year">2026</span> Oak King</p>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
