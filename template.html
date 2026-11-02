@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Oak King Whiskey</title>
 <meta name="description" content="Oak King is 8-year single barrel bourbon and rye. Premium whiskey. Shared experiences.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oak King">
+<meta property="og:title" content="Oak King Whiskey">
+<meta property="og:description" content="Premium whiskey. Shared experiences.">
+<meta property="og:url" content="https://oak-king.com/">
+<meta property="og:image" content="https://oak-king.com/oak-king-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Oak King logo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oak-king.com/oak-king-share.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap">
@@ -37,6 +48,7 @@
       <a href="#bottles">Bottles</a>
       <a href="#story">Story</a>
       <a href="#releases">Releases</a>
+      <a href="{{MERCHNAV}}"{{MERCHATTR}}>Merch</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -51,9 +63,6 @@
         <a class="btn" href="#bottles">Find your bottle</a>
         <a class="btn ghost" href="#story">Our story</a>
       </div>
-    </div>
-    <div class="hero-bottles">
-{{HERO}}
     </div>
   </section>
 
@@ -85,6 +94,13 @@
           </tbody>
         </table>
       </div>
+    </div>
+  </section>
+
+  <section class="merch" id="merch">
+    <div class="wrap">
+      <h2>Merch</h2>
+      {{MERCH}}
     </div>
   </section>
 

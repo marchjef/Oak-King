@@ -9,10 +9,12 @@ const all = fs.readdirSync(dir)
   .map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')))
   .sort((a, b) => b.sortOrder - a.sortOrder);
 const available = all.filter((r) => r.status === 'Available');
-const heroPhotos = (available.length ? available : all).slice(0, 2);
 
-const hero = heroPhotos.map((r) =>
-  `      <img src="${esc(r.photo)}" alt="${esc(r.photoAlt)}" width="900" height="1200">`).join('\n');
+const settings = JSON.parse(fs.readFileSync(path.join(__dirname, 'content/settings.json'), 'utf8'));
+const merchUrl = (settings.merchUrl || '').trim();
+const merch = merchUrl
+  ? `<a class="btn" href="${esc(merchUrl)}" target="_blank" rel="noopener">Shop merch</a>`
+  : '<p>Coming soon</p>';
 
 const fact = (label, value, cls = '') =>
   `<div${cls ? ` class="${cls}"` : ''}><dt>${label}</dt><dd>${esc(value)}</dd></div>`;
@@ -45,7 +47,9 @@ const rows = all.map((r) =>
   `            <tr><td>${esc(r.name)}</td><td>${Number(r.proof).toFixed(2)}</td><td>${esc(r.age)}</td><td>${esc(r.status)}</td></tr>`).join('\n');
 
 const html = fs.readFileSync(path.join(__dirname, 'template.html'), 'utf8')
-  .replace('{{HERO}}', () => hero)
+  .replace('{{MERCHNAV}}', () => (merchUrl ? esc(merchUrl) : '#merch'))
+  .replace('{{MERCHATTR}}', () => (merchUrl ? ' target="_blank" rel="noopener"' : ''))
+  .replace('{{MERCH}}', () => merch)
   .replace('{{BOTTLES}}', () => bottles)
   .replace('{{ROWS}}', () => rows);
 

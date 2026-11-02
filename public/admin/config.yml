@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Marchjef/oak-king
+  repo: marchjef/Oak-King
   branch: main
 media_folder: public/images/releases
 public_folder: /images/releases
@@ -33,3 +33,12 @@ collections:
       - { name: photoAlt, label: "Photo description", widget: string }
       - { name: buyUrl, label: "Link to buy", widget: string, required: false }
       - { name: sortOrder, label: "Order (higher shows first)", widget: number, value_type: int, default: 1 }
+  - name: settings
+    label: Site settings
+    files:
+      - name: settings
+        label: Merch link
+        file: content/settings.json
+        format: json
+        fields:
+          - { name: merchUrl, label: "Merch store link (leave empty to show Coming soon)", widget: string, required: false }
