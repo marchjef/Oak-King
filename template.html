@@ -106,29 +106,12 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <div>
-        <h2>Get in touch</h2>
+      <h2>Get in touch</h2>
+      <div class="contact-body">
         <p>Questions, events, or carrying Oak King at your store or bar. To buy a bottle, use the buy links above.</p>
-        <p>Or email <strong>Jeff@oak-king.com</strong></p>
+        <a class="btn" href="mailto:Jeff@oak-king.com?subject=Oak%20King%20website">Email Jeff</a>
+        <p>Or write to <a href="mailto:Jeff@oak-king.com?subject=Oak%20King%20website"><strong>Jeff@oak-king.com</strong></a></p>
       </div>
-      <form name="contact" id="contact-form" method="POST" data-netlify="true" netlify-honeypot="company-url">
-        <input type="hidden" name="form-name" value="contact">
-        <label class="hp" aria-hidden="true">Leave this empty <input name="company-url" id="company-url" tabindex="-1" autocomplete="off"></label>
-        <div class="two">
-          <label for="name">Name <input id="name" name="name" autocomplete="name" required></label>
-          <label for="email">Email <input id="email" name="email" type="email" autocomplete="email" required></label>
-        </div>
-        <label for="reason">What's this about?
-          <select id="reason" name="reason">
-            <option>General question</option>
-            <option>Event</option>
-            <option>Store or bar</option>
-          </select>
-        </label>
-        <label for="message">Message <textarea id="message" name="message" rows="5" required></textarea></label>
-        <button class="btn" type="submit">Send message</button>
-        <p class="status" id="form-status" role="status"></p>
-      </form>
     </div>
   </section>
 </main>
